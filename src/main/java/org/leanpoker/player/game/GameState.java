@@ -21,6 +21,7 @@ public class GameState {
 
     public int getValueOfCombination() {
         int value = 0;
+        int straightValue = 0;
 
         List<Card> allCards = new ArrayList<>();
 
@@ -30,9 +31,11 @@ public class GameState {
         for (Card card: allCards) {
             for (Card card1: allCards) {
                 if (card.getValue() == card1.getValue()) value += 10;
-                if (card.getRank().equals(card1.getRank() + 1)) value += 10;
+                if (card.getRank().equals(card1.getRank() + 1)) straightValue += 10;
             }
         }
+
+        if (straightValue >= 50) value += 100;
 
         return value;
     }
