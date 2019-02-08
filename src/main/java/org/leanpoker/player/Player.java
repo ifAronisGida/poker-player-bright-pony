@@ -35,12 +35,6 @@ public class Player {
         if (current_buy_in > 900 && gameState.getCommunity_cards().size() < 4) {
             our_bet = 0;
         }
-        else if (gameState.havePairInHand()) {
-            our_bet += 50;
-            if ( rankOfFirstCard > 6) {
-                our_bet += 50;
-            }
-        }
         return our_bet;
     }
 
