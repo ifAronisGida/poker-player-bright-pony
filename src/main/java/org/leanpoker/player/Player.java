@@ -41,6 +41,10 @@ public class Player {
                 our_bet += 50;
             }
         }
+
+        if (gameState.getValueOfCombination() < 100 && current_buy_in > 100) {
+            our_bet = 0;
+        }
         return our_bet;
     }
 
