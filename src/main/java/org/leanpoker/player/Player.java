@@ -40,7 +40,7 @@ public class Player {
         }
 
         //fold for early big raises
-        if (gameState.getValueOfCombination() < 50 && current_buy_in > 100) {
+        if (gameState.getValueOfCombination() < 50 && current_buy_in > 450 && !gameState.haveStrongPairInHand()) {
             our_bet = 0;
         }
         return our_bet;
