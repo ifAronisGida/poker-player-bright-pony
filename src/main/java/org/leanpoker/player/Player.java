@@ -22,6 +22,9 @@ public class Player {
         String rankOfFirstCard = our_player.getHole_cards().get(0).getRank();
         String rankOfSecondCard = our_player.getHole_cards().get(1).getRank();
         int our_bet = current_buy_in - our_player.getBet();
+
+        our_bet += gameState.getValueOfCombination();
+
         if (current_buy_in > 900 && gameState.getCommunity_cards().size() < 4) {
             our_bet = 0;
         }
