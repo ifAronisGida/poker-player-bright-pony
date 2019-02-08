@@ -38,7 +38,7 @@ public class GameState {
                     value += card.getValue();
                    // value = value * 2;
                 }
-                if (card.getRank().equals(card1.getRank() + 1)) straightValue += 10;
+                if (card.getValue() == card1.getValue() + 1) straightValue += 10;
             }
         }
 
