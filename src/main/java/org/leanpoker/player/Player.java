@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Player {
 
-    static final String VERSION = "Pony 1.0.0";
+    static final String VERSION = "Pony Pony Run Run";
 
     public static int betRequest(JsonElement request) {
         Gson gson = new Gson();
