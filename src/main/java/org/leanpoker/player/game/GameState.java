@@ -36,7 +36,7 @@ public class GameState {
             //value -= 2;
             for (Card card1: allCards) {
                 if (card.getValue() == card1.getValue()) {
-                    //value += card.getValue();
+                    value += card.getValue();
 
                    // value = value * 2;
                 }
