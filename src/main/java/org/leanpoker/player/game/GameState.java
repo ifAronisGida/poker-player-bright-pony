@@ -32,8 +32,12 @@ public class GameState {
         allCards.addAll(getPlayerByName("Bright Pony").getHole_cards());
 
         for (Card card: allCards) {
+           // value -= 3;
             for (Card card1: allCards) {
-                if (card.getValue() == card1.getValue()) value += 5;
+                if (card.getValue() == card1.getValue()) {
+                    value += card.getValue();
+                    value = value * 2;
+                }
                 if (card.getRank().equals(card1.getRank() + 1)) straightValue += 10;
             }
         }
