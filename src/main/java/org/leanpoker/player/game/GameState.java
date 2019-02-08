@@ -32,7 +32,7 @@ public class GameState {
         allCards.addAll(getPlayerByName("Bright Pony").getHole_cards());
 
         for (Card card: allCards) {
-           // value -= 3;
+            value -= 2;
             for (Card card1: allCards) {
                 if (card.getValue() == card1.getValue()) {
                     value += card.getValue();
