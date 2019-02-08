@@ -22,6 +22,27 @@ public class GameState {
     private List<Bot> players = new ArrayList<>();
     private List<Card> community_cards = new ArrayList<>();
 
+    public int getValueOfCombination() {
+        int value = 0;
+        int straightValue = 0;
+
+        List<Card> allCards = new ArrayList<>();
+
+        allCards.addAll(community_cards);
+        allCards.addAll(getPlayerByName("Bright Pony").getHole_cards());
+
+        for (Card card: allCards) {
+            for (Card card1: allCards) {
+                if (card.getValue() == card1.getValue()) value += 10;
+                if (card.getRank().equals(card1.getRank() + 1)) straightValue += 10;
+            }
+        }
+
+        if (straightValue >= 50) value += 100;
+
+        return value;
+    }
+
     public String getTournament_id() {
         return tournament_id;
     }
