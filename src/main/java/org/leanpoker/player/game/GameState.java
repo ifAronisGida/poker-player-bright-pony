@@ -33,24 +33,12 @@ public class GameState {
         allCards.addAll(getPlayerByName("Bright Pony").getHole_cards());
 
         for (Card card: getPlayerByName("Bright Pony").getHole_cards()) {
-            for (Card card1: community_cards) {
+            for (Card card1: allCards) {
                 if (card.getValue() == card1.getValue()) value += card.getValue() * 2;
             }
         }
 
-        for (Card card: allCards) {
-            //value -= 2;
-            for (Card card1: allCards) {
-                if (card.getValue() == card1.getValue()) {
-                    value += card.getValue();
 
-                   // value = value * 2;
-                }
-                if (card.getValue() == card1.getValue() + 1) straightValue += 10;
-            }
-        }
-
-        if (straightValue >= 100) value += 50;
 
         return value;
     }
