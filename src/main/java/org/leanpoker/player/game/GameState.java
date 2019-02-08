@@ -33,13 +33,20 @@ public class GameState {
         allCards.addAll(getPlayerByName("Bright Pony").getHole_cards());
 
         for (Card card: getPlayerByName("Bright Pony").getHole_cards()) {
+            value -= card.getValue();
             for (Card card1: allCards) {
-                if (card.getValue() == card1.getValue()) value += card.getValue() * 2;
+                if (card.getValue() == card1.getValue()) {
+                    value += card.getValue() * 2;
+                    matches++;
+                }
             }
         }
 
 
 
+        if (matches > 2) value += 100;
+        if (matches > 3) value += 100;
+        if (matches > 4) value += 100;
         return value;
     }
 
@@ -122,15 +129,19 @@ public class GameState {
                 '}';
     }
 
-    public boolean havePairInHand() {
+    public boolean haveStrongPairInHand() {
         Bot our_player = this.getPlayerByName("Bright Pony");
         String rankOfFirstCard = our_player.getHole_cards().get(0).getRank();
         String rankOfSecondCard = our_player.getHole_cards().get(1).getRank();
-        if (rankOfFirstCard.equals(rankOfSecondCard)) {
-            return true;
+        int valueOfCard = our_player.getHole_cards().get(0).getValue();
+        if (valueOfCard > 9) {
+            if (rankOfFirstCard.equals(rankOfSecondCard)) {
+                return true;
+            }
         }
-        else return false;
+        return false;
     }
+
 
     public int checkPairs() {
         int pairCounter = 0;

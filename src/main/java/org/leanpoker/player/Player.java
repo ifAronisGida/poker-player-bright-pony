@@ -26,20 +26,21 @@ public class Player {
 
         int ourValue = gameState.getValueOfCombination();
 
-        if (ourValue > 100) our_bet += 5;
-        if (ourValue > 150) our_bet += 5;
-        if (ourValue > 200) our_bet += 10;
-        if (ourValue > 250) our_bet += 20;
+        if (ourValue > 100) our_bet += 20;
+        if (ourValue > 150) our_bet += 20;
+        if (ourValue > 200) our_bet += 20;
+        if (ourValue > 250) our_bet += 30;
+        if (ourValue > 350) our_bet += 40;
 
         int rankOfFirstCard = our_player.getHole_cards().get(0).getValue();
 
         //fold for early all ins
-        if (current_buy_in > 900 && gameState.getCommunity_cards().size() < 4) {
+        if (current_buy_in > 900 && gameState.getCommunity_cards().size() < 4 && !gameState.haveStrongPairInHand()) {
             our_bet = 0;
         }
 
         //fold for early big raises
-        if (gameState.getValueOfCombination() < 50 && current_buy_in > 100) {
+        if (gameState.getValueOfCombination() < 50 && current_buy_in > 450 && !gameState.haveStrongPairInHand()) {
             our_bet = 0;
         }
         return our_bet;
