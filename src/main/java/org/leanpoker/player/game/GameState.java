@@ -136,7 +136,29 @@ public class GameState {
             if (rankOfFirstCard.equals(rankOfSecondCard)) {
                 return true;
             }
-        else return false;
-}
+        return false;
+    }
+
+
+    public int checkPairs() {
+        int pairCounter = 0;
+        Bot ourPlayer = getPlayerByName("Bright Pony");
+        String rankOfFirstCard = ourPlayer.getHole_cards().get(0).getRank();
+        String rankOfSecondCard = ourPlayer.getHole_cards().get(1).getRank();
+        if (rankOfFirstCard.equals(rankOfSecondCard)) {
+            pairCounter++;
+        }
+        if (!community_cards.isEmpty()) {
+            for (Card card : community_cards) {
+                if (rankOfFirstCard.equals(card.getRank())) {
+                    pairCounter++;
+                }
+                if (rankOfSecondCard.equals(card.getRank())) {
+                    pairCounter++;
+                }
+            }
+        }
+        return pairCounter;
+    }
 }
 
