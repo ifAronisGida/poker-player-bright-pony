@@ -43,7 +43,6 @@ public class GameState {
         }
 
 
-
         if (matches > 2) value += 100;
         if (matches > 3) value += 100;
         if (matches > 4) value += 100;
@@ -134,11 +133,9 @@ public class GameState {
         String rankOfFirstCard = our_player.getHole_cards().get(0).getRank();
         String rankOfSecondCard = our_player.getHole_cards().get(1).getRank();
         int valueOfCard = our_player.getHole_cards().get(0).getValue();
-        if (valueOfCard > 9) {
             if (rankOfFirstCard.equals(rankOfSecondCard)) {
                 return true;
             }
-        }
         return false;
     }
 
