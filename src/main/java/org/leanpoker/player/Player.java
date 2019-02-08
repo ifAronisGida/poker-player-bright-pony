@@ -26,11 +26,11 @@ public class Player {
 
         int ourValue = gameState.getValueOfCombination();
 
-        if (ourValue > 100) our_bet += 10;
-        if (ourValue > 150) our_bet += 10;
+        if (ourValue > 100) our_bet += 20;
+        if (ourValue > 150) our_bet += 20;
         if (ourValue > 200) our_bet += 20;
-        if (ourValue > 250) our_bet += 20;
-        if (ourValue > 350) our_bet += 20;
+        if (ourValue > 250) our_bet += 30;
+        if (ourValue > 350) our_bet += 40;
 
         int rankOfFirstCard = our_player.getHole_cards().get(0).getValue();
 
