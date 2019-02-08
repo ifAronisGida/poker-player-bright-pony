@@ -25,6 +25,7 @@ public class GameState {
     public int getValueOfCombination() {
         int value = 0;
         int straightValue = 0;
+        int matches = 0;
 
         List<Card> allCards = new ArrayList<>();
 
@@ -35,7 +36,8 @@ public class GameState {
             //value -= 2;
             for (Card card1: allCards) {
                 if (card.getValue() == card1.getValue()) {
-                    value += card.getValue();
+                    //value += card.getValue();
+
                    // value = value * 2;
                 }
                 if (card.getValue() == card1.getValue() + 1) straightValue += 10;

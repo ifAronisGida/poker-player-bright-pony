@@ -19,9 +19,17 @@ public class Player {
         int current_buy_in = gameState.getCurrent_buy_in();
         Bot our_player = gameState.getPlayerByName("Bright Pony");
         List<Bot> players = gameState.getPlayers();
+
+
+
         int our_bet = current_buy_in - our_player.getBet();
 
-        our_bet += gameState.getValueOfCombination();
+        int ourValue = gameState.getValueOfCombination();
+
+        if (ourValue > 200) our_bet += 10;
+        if (ourValue > 300) our_bet += 20;
+        if (ourValue > 400) our_bet += 30;
+        if (ourValue > 500) our_bet += 40;
 
         int rankOfFirstCard = our_player.getHole_cards().get(0).getValue();
         if (current_buy_in > 900 && gameState.getCommunity_cards().size() < 4) {
