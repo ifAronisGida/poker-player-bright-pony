@@ -43,6 +43,8 @@ public class GameState {
 
 
         if (matches > 2) value += 100;
+        if (matches > 3) value += 100;
+        if (matches > 4) value += 100;
         return value;
     }
 
