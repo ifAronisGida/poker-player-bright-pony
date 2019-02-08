@@ -42,7 +42,7 @@ public class Player {
             }
         }
 
-        if (gameState.getValueOfCombination() < 100 && current_buy_in > 100) {
+        if (gameState.getValueOfCombination() < 50 && current_buy_in > 100) {
             our_bet = 0;
         }
         return our_bet;
