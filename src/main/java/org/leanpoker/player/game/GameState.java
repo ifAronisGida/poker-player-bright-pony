@@ -1,5 +1,8 @@
 package org.leanpoker.player.game;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -118,4 +121,15 @@ public class GameState {
                 ", players=" + players +
                 '}';
     }
+
+    public boolean havePairInHand() {
+        Bot our_player = this.getPlayerByName("Bright Pony");
+        String rankOfFirstCard = our_player.getHole_cards().get(0).getRank();
+        String rankOfSecondCard = our_player.getHole_cards().get(1).getRank();
+        if (rankOfFirstCard.equals(rankOfSecondCard)) {
+            return true;
+        }
+        else return false;
 }
+}
+
