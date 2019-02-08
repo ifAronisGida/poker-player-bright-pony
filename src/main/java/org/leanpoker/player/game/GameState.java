@@ -44,7 +44,7 @@ public class GameState {
             }
         }
 
-        if (straightValue >= 100) value += 100;
+        if (straightValue >= 100) value += 50;
 
         return value;
     }
