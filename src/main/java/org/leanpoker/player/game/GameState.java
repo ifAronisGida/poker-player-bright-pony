@@ -133,17 +133,10 @@ public class GameState {
         String rankOfFirstCard = our_player.getHole_cards().get(0).getRank();
         String rankOfSecondCard = our_player.getHole_cards().get(1).getRank();
         int valueOfCard = our_player.getHole_cards().get(0).getValue();
-        if (valueOfCard > 9) {
             if (rankOfFirstCard.equals(rankOfSecondCard)) {
                 return true;
             }
-        }
         else return false;
 }
-
-    public boolean stronPair() {
-
-
-    }
 }
 
