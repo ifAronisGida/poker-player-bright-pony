@@ -127,14 +127,22 @@ public class GameState {
                 '}';
     }
 
-    public boolean havePairInHand() {
+    public boolean haveStrongPairInHand() {
         Bot our_player = this.getPlayerByName("Bright Pony");
         String rankOfFirstCard = our_player.getHole_cards().get(0).getRank();
         String rankOfSecondCard = our_player.getHole_cards().get(1).getRank();
-        if (rankOfFirstCard.equals(rankOfSecondCard)) {
-            return true;
+        int valueOfCard = our_player.getHole_cards().get(0).getValue();
+        if (valueOfCard > 9) {
+            if (rankOfFirstCard.equals(rankOfSecondCard)) {
+                return true;
+            }
         }
         else return false;
 }
+
+    public boolean stronPair() {
+
+
+    }
 }
 

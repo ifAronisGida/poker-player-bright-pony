@@ -35,7 +35,7 @@ public class Player {
         int rankOfFirstCard = our_player.getHole_cards().get(0).getValue();
 
         //fold for early all ins
-        if (current_buy_in > 900 && gameState.getCommunity_cards().size() < 4) {
+        if (current_buy_in > 900 && gameState.getCommunity_cards().size() < 4 && !gameState.haveStrongPairInHand()) {
             our_bet = 0;
         }
 
