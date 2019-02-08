@@ -35,6 +35,10 @@ public class Player {
         if (current_buy_in > 900 && gameState.getCommunity_cards().size() < 4) {
             our_bet = 0;
         }
+
+        if (gameState.getValueOfCombination() < 50 && current_buy_in > 100) {
+            our_bet = 0;
+        }
         return our_bet;
     }
 
