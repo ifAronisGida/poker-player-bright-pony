@@ -19,6 +19,11 @@ public class Player {
         Bot our_player  = gameState.getPlayerByName("Bright Pony");
         List<Bot> players  = gameState.getPlayers();
         int our_bet = current_buy_in - our_player.getBet();
+        String rankOfFirstCard = our_player.getHole_cards().get(0).getRank();
+        String rankOfSecondCard = our_player.getHole_cards().get(1).getRank();
+        if (rankOfFirstCard.equals(rankOfSecondCard)){
+            return our_bet + 50;
+        }
         return our_bet;
     }
 
